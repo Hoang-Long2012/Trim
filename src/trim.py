@@ -28,7 +28,7 @@ def trim(Side=None, Chars=None):
 			if Strip is None:
 				raise ValueError(f"Invalid side: {Side}")
 			Line = Strip(Line, Chars)
-			print(Line, end=Ending)
+			sys.stdout.write(Line + Ending)
 	except KeyboardInterrupt:
 		return None
 def getVersion():
