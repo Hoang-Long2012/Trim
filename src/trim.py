@@ -1,6 +1,6 @@
 import sys
 import argparse
-def trim(Side=None, Chars=None):
+def trim(Side=None, Garbage=False, Chars=None):
 	Methods = {
 		None: str.strip,
 		"l": str.lstrip,
@@ -27,16 +27,19 @@ def trim(Side=None, Chars=None):
 			Strip = Methods.get(Side)
 			if Strip is None:
 				raise ValueError(f"Invalid side: {Side}")
+			if Garbage:
+				Line = Strip(Line)
 			Line = Strip(Line, Chars)
 			sys.stdout.write(Line + Ending)
 	except KeyboardInterrupt:
 		return None
 def getVersion():
-	return "1.0"
+	return "1.1"
 def parseArgs():
 	Parser = argparse.ArgumentParser(prog="trim", description="Strip characters from the beginning and/or end of each input line.", allow_abbrev=False)
 	Parser.add_argument("-v", "--version", action="version", version=f"Trim version {getVersion()}")
 	Parser.add_argument("chars", nargs="?", type=str, metavar="CHARS", help="Custom characters to strip.")
+	Parser.add_argument("-w", "--whitespace", action="store_true", help="Strip junk characters when following the specified side with a custom characters set.")
 	Side = Parser.add_mutually_exclusive_group()
 	Side.add_argument("-r", "--right", action="store_true", help="Strip only the end of the line.")
 	Side.add_argument("-l", "--left", action="store_true", help="Strip only the start of the line.")
@@ -48,7 +51,7 @@ def main():
 		Side = "r"
 	elif Args.left:
 		Side = "l"
-	trim(Side, Args.chars)
+	trim(Side, Args.whitespace, Args.chars)
 	sys.exit(0)
 if __name__ == "__main__":
 	main()
