@@ -12,6 +12,9 @@ def trim(Side=None, Garbage=False, Chars=None):
 		except (ValueError, UnicodeError):
 			print(f"Invalid escape sequence: {Chars!r}", file=sys.stderr)
 			sys.exit(1)
+	Strip = Methods.get(Side)
+	if Strip is None:
+		raise ValueError(f"Invalid side: {Side}")
 	try:
 		for Line in sys.stdin:
 			Ending = ""
@@ -24,9 +27,6 @@ def trim(Side=None, Garbage=False, Chars=None):
 			elif Line.endswith("\r"):
 				Ending = "\r"
 				Line = Line[:-1]
-			Strip = Methods.get(Side)
-			if Strip is None:
-				raise ValueError(f"Invalid side: {Side}")
 			if Garbage:
 				Line = Strip(Line)
 			Line = Strip(Line, Chars)
