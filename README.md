@@ -108,11 +108,12 @@ Hello World
 
 | Option | Description |
 | --- | --- |
-| `-v`, `--version` | Show program version |
-| `-h`, `--help` | Show help message |
-| `-r`, `--right` | Strip characters only from the end of the line |
-| `-l`, `--left` | Strip characters only from the beginning of the line |
-| `CHARS` | Characters to strip |
+| `-v`, `--version` | Show program version. |
+| `-h`, `--help` | Show help message. |
+| `-r`, `--right` | Strip characters only from the end of the line. |
+| `-l`, `--left` | Strip characters only from the beginning of the line. |
+| `-w`, `--whitespace` | Strip junk characters even when a custom character set has been specified. |
+| `CHARS` | Characters to strip. |
 
 ## Custom Characters
 

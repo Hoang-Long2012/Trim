@@ -39,7 +39,7 @@ def parseArgs():
 	Parser = argparse.ArgumentParser(prog="trim", description="Strip characters from the beginning and/or end of each input line.", allow_abbrev=False)
 	Parser.add_argument("-v", "--version", action="version", version=f"Trim version {getVersion()}")
 	Parser.add_argument("chars", nargs="?", type=str, metavar="CHARS", help="Custom characters to strip.")
-	Parser.add_argument("-w", "--whitespace", action="store_true", help="Strip junk characters when following the specified side with a custom characters set.")
+	Parser.add_argument("-w", "--whitespace", action="store_true", help="Strip junk characters even when a custom character set has been specified.")
 	Side = Parser.add_mutually_exclusive_group()
 	Side.add_argument("-r", "--right", action="store_true", help="Strip only the end of the line.")
 	Side.add_argument("-l", "--left", action="store_true", help="Strip only the start of the line.")
