@@ -113,6 +113,7 @@ Hello World
 | `-r`, `--right` | Strip characters only from the end of the line. |
 | `-l`, `--left` | Strip characters only from the beginning of the line. |
 | `-w`, `--whitespace` | Strip junk characters even when a custom character set has been specified. |
+| `-e`, `--end` | Line ending of output. |
 | `CHARS` | Characters to strip. |
 
 ## Custom Characters
@@ -151,4 +152,4 @@ Remove newline characters.
 
 	This project is licensed under the [MIT License.](LICENSE)
 
-TCopyright (c) 2026 Hoàng Long
+Copyright (c) 2026 Hoàng Long

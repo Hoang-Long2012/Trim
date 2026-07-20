@@ -46,7 +46,7 @@ def parseArgs():
 	Parser.add_argument("-v", "--version", action="version", version="Trim version 1.1")
 	Parser.add_argument("chars", nargs="?", type=str, metavar="CHARS", help="Custom characters to strip.")
 	Parser.add_argument("-w", "--whitespace", action="store_true", help="Strip junk characters even when a custom character set has been specified.")
-	Parser.add_argument("-e", "--ending", type=str, metavar="ENDING", help="Line ending of output.")
+	Parser.add_argument("-e", "--end", type=str, metavar="ENDING", help="Line ending of output.")
 	Side = Parser.add_mutually_exclusive_group()
 	Side.add_argument("-r", "--right", action="store_true", help="Strip only the end of the line.")
 	Side.add_argument("-l", "--left", action="store_true", help="Strip only the start of the line.")
