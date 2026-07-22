@@ -1,5 +1,8 @@
 # Changelog
 
+## Trim version 1.3
+- Fixed a bug serious crash.
+
 ## Trim version 1.2
 - Added -e; --end to declare the end of line character.
 
