@@ -43,7 +43,7 @@ def trim(Side=None, Whitespace=False, Chars=None, End=None):
 		sys.stdout.write(Line + Ending)
 def parseArgs():
 	Parser = argparse.ArgumentParser(prog="Trim", description="Strip characters from the beginning and/or end of each input line.", allow_abbrev=False)
-	Parser.add_argument("-v", "--version", action="version", version="Trim version 1.3")
+	Parser.add_argument("-v", "--version", action="version", version="%(prog)s version 1.3")
 	Parser.add_argument("chars", nargs="?", type=str, metavar="CHARS", help="Custom characters to strip.")
 	Parser.add_argument("-w", "--whitespace", action="store_true", help="Strip junk characters even when a custom character set has been specified.")
 	Parser.add_argument("-e", "--end", type=str, metavar="ENDING", help="Line ending of output.")
