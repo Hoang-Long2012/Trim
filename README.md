@@ -28,7 +28,7 @@ git clone https://github.com/Hoang-Long2012/trim.git
 - Run:
 
 ```
-cd src
+cd trim/src
 python trim.py
 ```
 
